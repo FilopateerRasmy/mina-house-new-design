@@ -1,0 +1,86 @@
+@use "../../../assets/sass/mixins";
+.spacer {
+  flex: 1 1 auto;
+}
+.mat-toolbar{
+  background: transparent;
+
+
+}
+.search{
+  position: relative;
+  //margin-left: 1rem;
+  &-nav{
+    padding: 1rem 3.3rem;
+    padding-left: 3.8rem;
+    border-radius: 2rem;
+    outline: none;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    width: 25rem;
+    &::placeholder{
+      color: #fff;
+    }
+  }
+  &-icon{
+    position: absolute;
+    top: 58%;
+    transform: translateY(-50%);
+    left: 1.3rem;
+    font-size: 1.8rem;
+    color: white;
+  }
+}
+.heading{
+  @include mixins.flex(row, flex-start, baseline);
+  column-gap: 3rem;
+  flex: 1 0 60%;
+}
+.head-title {
+  color: white;
+  font-size: 2.2rem;
+}
+.list-items{
+  @include mixins.flex(row, center, center);
+  flex: 1 0 40%;
+  column-gap: 7rem;
+  font-size: 1.6rem;
+  color: white;
+
+}
+.links{
+  cursor: pointer;
+
+  padding: .8rem;
+  &:hover{
+
+    animation-name: linksanimation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+  }
+}
+:host{
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+@keyframes linksanimation {
+  0%{
+    border-left: 3px solid #fff;
+  }
+  25%{
+
+      border-right: 3px solid #fff;
+
+  }
+  50%{
+    border-top: 3px solid #fff;
+  }
+  100%{
+    border-bottom: 3px solid #fff;
+  }
+}
