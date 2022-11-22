@@ -15,7 +15,7 @@ import { tap } from 'rxjs';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  @Output() sideNavMode= new EventEmitter;
+  @Output() sideNavMode = new EventEmitter();
   navItems= ['Home', 'Tours', 'About', 'Contact'];
   smallScreenWidth= 800;
   isSmallScreen$ = this.breakPointObserver.observe(`(max-width:${this.smallScreenWidth}px)`).pipe(

@@ -9,7 +9,7 @@
   </div>
 
   <div *ngIf="(isSmallScreen$|async)?.matches" >
-    <mat-icon class="menu-icon" (onClick)="activateSideNav()">menu</mat-icon>
+    <mat-icon class="menu-icon" (click)="activateSideNav()">menu</mat-icon>
   </div>
 
   <nav *ngIf="!(isSmallScreen$|async)?.matches " class="list-items" >
