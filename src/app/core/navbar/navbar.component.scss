@@ -50,14 +50,24 @@
 .links{
   cursor: pointer;
 
-  padding: .8rem;
-  &:hover{
+  position: relative;
+  padding: 1rem;
+ 
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scale(0,0);
+    border-radius: 2rem;
+    background-color: rgba(255, 255, 255, 0.342);
+    transition: all .3s linear;
+  }
+  &:hover::before{
+    transform: scale(1,1);
 
-    animation-name: linksanimation;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
   }
 }
 :host{
@@ -66,22 +76,7 @@
   margin: 0 auto;
   padding: 0.5rem 0;
 }
-@keyframes linksanimation {
-  0%{
-    border-left: 3px solid #fff;
-  }
-  25%{
 
-      border-right: 3px solid #fff;
-
-  }
-  50%{
-    border-top: 3px solid #fff;
-  }
-  100%{
-    border-bottom: 3px solid #fff;
-  }
-}
 
 .menu-icon{
   color: white;
