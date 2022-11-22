@@ -1,1 +1,17 @@
-<app-navbar></app-navbar>
+ <mat-sidenav-container fullscreen>
+    <mat-sidenav  #sidenav>
+      <mat-toolbar class="sidenav-title">
+        <h1>Not A Tree</h1>
+      </mat-toolbar>
+      <mat-nav-list class="sidenav-items" (click)="sidenav.close()">
+        <a mat-list-item routerLink="/">Home</a>
+        <a mat-list-item >Tour</a>
+        <a mat-list-item >About</a>
+        <a mat-list-item >Contact</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <app-navbar (sideNavMode)="sidenav.open()"></app-navbar>
+</mat-sidenav-container> 
+
+
+<!-- <app-navbar></app-navbar> -->

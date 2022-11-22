@@ -5,7 +5,6 @@
 .mat-toolbar{
   background: transparent;
 
-
 }
 .search{
   position: relative;
@@ -33,7 +32,7 @@
   }
 }
 .heading{
-  @include mixins.flex(row, flex-start, baseline);
+  @include mixins.flex(row, flex-start, center);
   column-gap: 3rem;
   flex: 1 0 60%;
 }
@@ -42,9 +41,8 @@
   font-size: 2.2rem;
 }
 .list-items{
-  @include mixins.flex(row, center, center);
-  flex: 1 0 40%;
-  column-gap: 7rem;
+  @include mixins.flex(row, space-between, center);
+  flex: 1 0 35%;
   font-size: 1.6rem;
   color: white;
 
@@ -64,9 +62,9 @@
 }
 :host{
   display: block;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
-  padding: 1.5rem 0;
+  padding: 0.5rem 0;
 }
 @keyframes linksanimation {
   0%{
@@ -83,4 +81,8 @@
   100%{
     border-bottom: 3px solid #fff;
   }
+}
+
+.menu-icon{
+  color: white;
 }
