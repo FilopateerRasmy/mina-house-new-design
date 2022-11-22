@@ -8,10 +8,11 @@
     </div>
   </div>
 
-  <nav  class="list-items" >
-    <a class="links">Home</a>
-    <a class="links">Tours</a>
-    <a class="links">About</a>
-    <a class="links">Contact Us</a>
+  <div *ngIf="(isSmallScreen$|async)?.matches" >
+    <mat-icon class="menu-icon" (onClick)="activateSideNav()">menu</mat-icon>
+  </div>
+
+  <nav *ngIf="!(isSmallScreen$|async)?.matches " class="list-items" >
+    <a *ngFor="let item of navItems" class="links" >{{item}}</a>
   </nav>
 </mat-toolbar>
